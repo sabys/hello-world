@@ -28,4 +28,14 @@ public class CalculatorTest {
     public void divideByZeroThrows() {
         assertThrows(ArithmeticException.class, () -> Calculator.divide(1.0, 0.0));
     }
+
+    @Test
+    public void modReturnsRemainder() {
+        assertEquals(1.0, Calculator.mod(7.0, 3.0));
+    }
+
+    @Test
+    public void modByZeroThrows() {
+        assertThrows(ArithmeticException.class, () -> Calculator.mod(1.0, 0.0));
+    }
 }
