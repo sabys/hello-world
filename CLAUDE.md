@@ -21,10 +21,3 @@ java -jar lib/junit-platform-console-standalone-1.10.2.jar -cp . --select-class 
 ```
 
 Note: `HelloWorldTest.java` depends on `HelloWorld.class` being compiled first (it references `HelloWorld.greet`).
-
-## Architecture
-
-- `HelloWorld.java` — entry point (`main`) plus the reusable `greet(String name)` method that the test targets.
-- `HelloWorldTest.java` — JUnit 5 (Jupiter) test for `HelloWorld.greet`.
-- `lib/junit-platform-console-standalone-1.10.2.jar` — vendored JUnit console launcher (no Maven/Gradle available in this environment), used as both the compile-time classpath and the test runner.
-- `.class` build artifacts are gitignored; only source and the vendored jar are tracked.
